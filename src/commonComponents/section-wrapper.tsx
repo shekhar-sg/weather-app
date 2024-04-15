@@ -21,8 +21,8 @@ const SectionWrapper = (props: SectionWrapperProps) => {
 export default SectionWrapper;
 
 export const basePx = {
-  xs: 2,
-  lg: 4,
+  xs: 0.5,
+  sm: 4,
   xxl: 6,
 };
 export const basePy = {
