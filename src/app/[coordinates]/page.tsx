@@ -43,7 +43,6 @@ const CityPage = (props: CityPageProps) => {
             }}
           />
           <ForecastWeatherSwiper
-            data={forecastData}
             SwiperProps={{
               sx: {
                 width: 1,
@@ -60,48 +59,3 @@ const CityPage = (props: CityPageProps) => {
 };
 
 export default CityPage;
-
-const forecastData: ForecastWeatherSwiperProps["data"] = [
-  {
-    temperature: 25,
-    unit: "C",
-    dateTime: "2021-10-10T10:00:00Z",
-    description: "Cloudy",
-    icon: "04d",
-  },
-  {
-    temperature: 25,
-    unit: "C",
-    dateTime: "2021-10-10T10:00:00Z",
-    description: "Cloudy",
-    icon: "04d",
-  },
-  {
-    temperature: 25,
-    unit: "C",
-    dateTime: "2021-10-10T10:00:00Z",
-    description: "Cloudy",
-    icon: "04d",
-  },
-  {
-    temperature: 25,
-    unit: "C",
-    dateTime: "2021-10-10T10:00:00Z",
-    description: "Cloudy",
-    icon: "04d",
-  },
-  {
-    temperature: 25,
-    unit: "C",
-    dateTime: "2021-10-10T10:00:00Z",
-    description: "Cloudy",
-    icon: "04d",
-  },
-  {
-    temperature: 25,
-    unit: "C",
-    dateTime: "2021-10-10T10:00:00Z",
-    description: "Cloudy",
-    icon: "04d",
-  },
-];

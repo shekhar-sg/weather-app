@@ -15,7 +15,7 @@ import {
   type MRT_SortingState,
   useMaterialReactTable,
 } from "material-react-table";
-import {alpha, Paper, Typography} from "@mui/material";
+import { Typography } from "@mui/material";
 import { GeoLocationLIstAPI } from "@/apiTypes/geo-location-list-api.type";
 import useSWRInfinite from "swr/infinite";
 import { fetcher } from "@/utils/swr";

@@ -17,7 +17,6 @@ import { ForecastAPI } from "@/apiTypes/forecast-api.type";
 import { Typography } from "@mui/material";
 
 export interface ForecastWeatherSwiperProps {
-  data: ForecastWeatherCardProps["data"][];
   SwiperProps?: MaterialSwiperProps;
   SwiperSlideProps?: MaterialSwiperSlideProps;
   ForecastWeatherCardProps?: Omit<ForecastWeatherCardProps, "data">;
