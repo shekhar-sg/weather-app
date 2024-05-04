@@ -45,7 +45,7 @@ const ForecastWeatherSwiper = (props: ForecastWeatherSwiperProps) => {
     return (
         <MaterialSwiper {...deepmerge(defaultSwiperProps, SwiperProps)}>
             {filteredData.map((data, index) => {
-                const {weather, main, dt_txt} = data;
+                const {weather, main, dt_txt,} = data;
                 return (
                     <MaterialSwiperSlide
                         key={index}

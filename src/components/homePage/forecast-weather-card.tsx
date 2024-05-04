@@ -72,8 +72,8 @@ const ForecastWeatherCard = (props: ForecastWeatherCardProps) => {
             <Stack
                 justifyContent={"space-between"}
             >
-                <Typography variant={"caption"}><strong>Max:</strong>{max_temp}°{unit}</Typography>
-                <Typography variant={"caption"}><strong>Min:</strong>{min_temp}°{unit}</Typography>
+                <Typography variant={"caption"}><strong>Max:<br/></strong>{max_temp}°{unit}</Typography>
+                <Typography variant={"caption"}><strong>Min:<br/></strong>{min_temp}°{unit}</Typography>
             </Stack>
         </Stack>
     );

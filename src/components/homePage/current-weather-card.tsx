@@ -7,7 +7,6 @@ import {weatherPath} from "@/constant";
 import {WeatherAPI} from "@/apiTypes/weather-api.type";
 import {MaterialImage} from "@c/material-components";
 import {useAppConfig} from "@c/layout";
-import {Height, KeyboardDoubleArrowDown, KeyboardDoubleArrowUp} from "@mui/icons-material";
 
 export interface CurrentWeatherCardProps extends Omit<StackProps, "children"> {
 }
@@ -83,9 +82,10 @@ const CurrentWeatherCard = (props: CurrentWeatherCardProps) => {
                 <Typography variant={"h4"} fontWeight={"500"}>
                     {main.temp}°{unit}
                 </Typography>
-                <Stack alignItems={"center"} rowGap={2} justifyContent={"center"} marginX={2} padding={"4px 8px"} borderRadius={"8px"} borderLeft={"1px solid red"}>
-                    <Typography variant={"body2"}>{main.temp_max}°{unit}&nbsp; max</Typography>
-                    <Typography variant={"body2"}>{main.temp_min}°{unit}&nbsp; min</Typography>
+                <Stack alignItems={"center"} rowGap={2} justifyContent={"center"} marginX={2} padding={"4px 8px"}
+                       borderRadius={"8px"} borderLeft={"1px solid red"}>
+                    <Typography variant={"body2"}><strong>{main.temp_max}°{unit}</strong>&nbsp; max</Typography>
+                    <Typography variant={"body2"}><strong>{main.temp_min}°{unit}</strong>&nbsp; min</Typography>
                 </Stack>
             </Stack>
             <Typography variant={"body1"}>
