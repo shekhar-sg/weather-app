@@ -10,7 +10,7 @@ import Link from "next/link";
 import {BookmarkBorder} from "@mui/icons-material";
 
 const HomePage = () => {
-    const {loading, error, coordinates} = useAppConfig();
+    const {loading, error, coordinates, toggleBookmark} = useAppConfig();
     const {setCoordinates, setError} = useAppConfig();
 
     useEffect(() => {
@@ -82,10 +82,15 @@ const HomePage = () => {
                     bookMarks.length ? bookMarks.map((city, index) => {
                         return (
                             <Chip
+                                clickable
                                 key={index}
                                 component={Link}
                                 href={`${city.coordinates.lat},${city.coordinates.lon}`}
                                 label={city.name}
+                                onDelete={(event) => {
+                                    event.preventDefault();
+                                    toggleBookmark(city);
+                                }}
                                 sx={{
                                     cursor: "pointer",
                                 }}

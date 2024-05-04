@@ -1,5 +1,5 @@
 "use client";
-import {ReactNode} from "react";
+import {ReactNode, useEffect} from "react";
 import Header from "@c/layout/header";
 import {Box} from "@mui/material";
 import {create} from "zustand";
@@ -11,6 +11,13 @@ export interface BaseLayoutProps {
 const BaseLayout = (props: BaseLayoutProps) => {
     const {children} = props;
     const {icon} = useAppConfig();
+    useEffect(() => {
+       if (window){
+           useAppConfig.setState({
+               bookMarks: JSON.parse(window.localStorage.getItem("bookMarks") || "[]")
+           })
+       }
+    }, []);
     return (
         <>
             <Header/>
@@ -81,7 +88,7 @@ export const useAppConfig = create<AppConfig>((setState) => {
         setError: (error) => setState({error, loading: false}),
         icon: null,
         setIcon: (icon) => setState({icon}),
-        bookMarks: window.localStorage.getItem("bookMarks") ? JSON.parse(window.localStorage.getItem("bookMarks")!) : [],
+        bookMarks: [],
         toggleBookmark: (bookMark) =>
             setState(({bookMarks}) => {
                 const index = bookMarks.findIndex((b) => b.name === bookMark.name);
