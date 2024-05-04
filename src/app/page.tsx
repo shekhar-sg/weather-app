@@ -87,13 +87,14 @@ const HomePage = () => {
                                 }}
                             />
                         )
-                    }) : <Typography variant={"body1"}
-                                     display={"flex"}
-                                     alignItems={"center"}
-                    >No Bookmarks,
-                        Click on the {
-                            <BookmarkBorder/>
-                        } in any row to bookmark it.
+                    }) : <Typography
+                        variant={"body1"}
+                    >
+                        No Bookmarks, Click on the {<BookmarkBorder
+                        sx={{
+                            verticalAlign: "middle",
+                        }}
+                    />} in any row to bookmark it.
                     </Typography>
                 }
             </Stack>
