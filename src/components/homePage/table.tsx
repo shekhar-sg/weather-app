@@ -78,7 +78,7 @@ const GeoLocationTable = () => {
       if (containerRefElement) {
         const { scrollHeight, scrollTop, clientHeight } = containerRefElement;
         if (
-          scrollHeight - scrollTop - clientHeight < 400 &&
+          scrollHeight - scrollTop -  clientHeight< 400 &&
           !isValidating &&
           totalFetched < totalDBRowCount
         ) {
