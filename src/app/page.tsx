@@ -3,13 +3,16 @@ import CurrentWeatherCard from "@c/homePage/current-weather-card";
 import ForecastWeatherSwiper from "@c/homePage/forecast-weather-swiper";
 import SectionWrapper from "@/commonComponents/section-wrapper";
 import {useAppConfig} from "@c/layout";
-import {Typography} from "@mui/material";
+import {Chip, Stack, Typography} from "@mui/material";
 import {useEffect} from "react";
 import GeoLocationTable from "@c/homePage/table";
+import Link from "next/link";
+import {BookmarkBorder} from "@mui/icons-material";
 
 const HomePage = () => {
     const {loading, error, coordinates} = useAppConfig();
     const {setCoordinates, setError} = useAppConfig();
+
     useEffect(() => {
         navigator.geolocation.getCurrentPosition(
             (position) => {
@@ -27,6 +30,9 @@ const HomePage = () => {
             },
         );
     }, [setCoordinates, setError]);
+
+    const {bookMarks} = useAppConfig();
+
     return (
         <>
             <SectionWrapper
@@ -63,6 +69,38 @@ const HomePage = () => {
                     </>
                 ) : null}
             </SectionWrapper>
+            <Stack
+                direction={"row"}
+                alignItems={"center"}
+                width={"100%"}
+                flexWrap={"wrap"}
+                p={2}
+                gap={2}
+            >
+                <Typography variant={"h6"} fontWeight={"bolder"}>Bookmarks:</Typography>
+                {
+                    bookMarks.length ? bookMarks.map((city, index) => {
+                        return (
+                            <Chip
+                                key={index}
+                                component={Link}
+                                href={`${city.coordinates.lat},${city.coordinates.lon}`}
+                                label={city.name}
+                                sx={{
+                                    cursor: "pointer",
+                                }}
+                            />
+                        )
+                    }) : <Typography variant={"body1"}
+                                     display={"flex"}
+                                     alignItems={"center"}
+                    >No Bookmarks,
+                        Click on the {
+                            <BookmarkBorder/>
+                        } in any row to bookmark it.
+                    </Typography>
+                }
+            </Stack>
             <GeoLocationTable/>
         </>
     );
