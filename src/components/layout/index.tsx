@@ -12,11 +12,11 @@ const BaseLayout = (props: BaseLayoutProps) => {
     const {children} = props;
     const {icon} = useAppConfig();
     useEffect(() => {
-       if (window){
-           useAppConfig.setState({
-               bookMarks: JSON.parse(window.localStorage.getItem("bookMarks") || "[]")
-           })
-       }
+        if (window) {
+            useAppConfig.setState({
+                bookMarks: JSON.parse(window.localStorage.getItem("bookMarks") || "[]")
+            })
+        }
     }, []);
     return (
         <>

@@ -40,16 +40,7 @@ const CityPage = (props: CityPageProps) => {
                             lg: 0.4,
                         }}
                     />
-                    <ForecastWeatherSwiper
-                        SwiperProps={{
-                            sx: {
-                                width: 1,
-                                maxWidth: {
-                                    lg: 0.6,
-                                },
-                            },
-                        }}
-                    />
+                    <ForecastWeatherSwiper/>
                 </>
             ) : null}
         </SectionWrapper>
